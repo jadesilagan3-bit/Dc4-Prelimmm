@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.app {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 28px 22px 18px;
+}
+
+.page-header {
+  padding: 32px;
+  border-radius: 22px;
+  color: white;
+  background: linear-gradient(135deg, #243b80, #4361c5);
+  box-shadow: 0 14px 34px rgba(36, 59, 128, 0.18);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.page-header p {
+  margin: 0;
+  color: #e0e7ff;
+}
+
+main {
+  display: grid;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.student-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e4e9f3;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(27, 39, 71, 0.04);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #e7ecff;
+  color: #3049a0;
+  font-size: 1.2rem;
+  font-weight: 750;
+}
+
+.student-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+.student-card p {
+  margin: 5px 0;
+  color: #59647a;
+  font-size: 0.92rem;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.regular {
+  color: #176846;
+  background: #dff7eb;
+}
+
+.irregular {
+  color: #8a4b0b;
+  background: #fff0d7;
+}
+
+.attendance-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 26px;
+  background: white;
+  border: 1px solid #e4e9f3;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(27, 39, 71, 0.04);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #5266b5;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.attendance-panel h2 {
+  margin-bottom: 7px;
+}
+
+.attendance-help {
+  margin: 0;
+  color: #69748a;
+}
+
+.count {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 22px;
+  background: #eef1ff;
+  color: #3049a0;
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.button-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #9aa9ff;
+  outline-offset: 2px;
+}
+
+.primary {
+  color: white;
+  background: #3049a0;
+}
+
+.secondary {
+  color: #28365d;
+  background: #edf0f7;
+}
+
+footer {
+  padding: 24px 0 4px;
+  color: #7a8498;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .student-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-panel {
+    grid-template-columns: 1fr auto;
+    padding: 20px;
+  }
+
+  .page-header {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 430px) {
+  .app {
+    padding: 16px 12px;
+  }
+
+  .attendance-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .count {
+    grid-column: 1;
+    grid-row: auto;
+    width: 70px;
+    height: 70px;
+  }
+}
